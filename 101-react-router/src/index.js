@@ -12,4 +12,13 @@ class App extends Component {
     }
 }
 
-ReactDOM.render(<App />, document.querySelector("#root"));
+ReactDOM.render(
+    <BrowserRouter>
+        <div>
+            <Route exact path="/" component={App} />
+            <Route path="/post" component={Post} />
+            <Route path="/profile" component={Profile} />
+        </div>
+    </BrowserRouter>,
+    document.querySelector("#root")
+);
