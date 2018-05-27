@@ -2,6 +2,14 @@ import React, { Component } from "react";
 
 // TYPE OF COMPONENT: Class-Component
 class Header extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            keywords: ""
+        };
+    }
+
     inputChange(event) {
         console.log(event.target.value);
     }
