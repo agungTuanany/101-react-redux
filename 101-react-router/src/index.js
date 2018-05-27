@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 
 // COMPONENTS
 import Post from "./component/posts";
@@ -15,6 +15,12 @@ class App extends Component {
 ReactDOM.render(
     <BrowserRouter>
         <div>
+            <header>
+                <Link to="/"> Home </Link> <br />
+                <Link to="/post"> Post </Link> <br />
+                <Link to="/profile"> Profile </Link> <br />
+                <hr />
+            </header>
             <Route exact path="/" component={App} />
             <Route path="/post" component={Post} />
             <Route path="/profile" component={Profile} />
