@@ -18,7 +18,11 @@ class App extends Component {
     }
 
     filterNews(keywords) {
-        console.log(keywords);
+        let filtered = this.state.news.filter(item => {
+            return item.title.indexOf(keywords) > -1;
+        });
+
+        this.setState({ filtered });
     }
 
     render() {
