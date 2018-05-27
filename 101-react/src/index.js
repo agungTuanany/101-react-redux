@@ -12,14 +12,20 @@ class App extends Component {
         super(props);
 
         this.state = {
-            news: JSON
+            news: JSON,
+            filtered: JSON
         };
     }
+
+    filterNews(keywords) {
+        console.log(keywords);
+    }
+
     render() {
         return (
             <div>
-                <Header />
-                <NewsList news={this.state.news} />
+                <Header newsSearch={keywords => this.filterNews(keywords)} />
+                <NewsList news={this.state.filtered} />
             </div>
         );
     }
