@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import Banner from "../component/banner";
+import Banner from "./banner";
 import ArtistsList from "./artitsList";
 
 const URL_ARTISTS = "http://localhost:3004/artists";
