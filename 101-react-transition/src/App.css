@@ -70,6 +70,26 @@
 /*=======================================
                 BASIC
 ========================================*/
+.basic-appear {
+    opacity: 0.01;
+}
+
+.basic-appear.basic-appear-active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+
+/* STARTING animation */
+.basic-enter {
+    /* opacity: 0.5; */
+    background: #3f51b5;
+}
+
+/* ENDING animation */
+.basic-enter.basic-enter-active {
+    background: #2196f3;
+    transition: all 500ms ease-in;
+}
 
 /*=======================================
                 FADE

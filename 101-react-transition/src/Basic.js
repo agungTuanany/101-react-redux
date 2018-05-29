@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import "./App.css";
 
@@ -6,17 +7,22 @@ class Basic extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            items: [99, 25]
-        };
+        this.state = { items: [99, 25] };
+        // this.handleAdd = this.handleAdd.bind(this);
     }
 
     addElements() {
         return this.state.items.map(function(item, i) {
             return (
-                <div className="item" key={i}>
-                    {item}
-                </div>
+                <CSSTransition
+                    key={i}
+                    classNames="basic"
+                    timeout={{ enter: 500 }}
+                >
+                    <div className="item" key={i}>
+                        {item}
+                    </div>
+                </CSSTransition>
             );
         });
     }
@@ -43,8 +49,7 @@ class Basic extends Component {
     render() {
         return (
             <div>
-                {this.addElements()}
-
+                <TransitionGroup>{this.addElements()}</TransitionGroup>
                 <div className="btns">
                     <div
                         className="btn-add"
