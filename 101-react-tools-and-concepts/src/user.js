@@ -12,16 +12,41 @@ class User extends Component {
         );
     }
 }
-//  The main idea for Proptypes is validating
+//  The main idea for propTypes is validating
 
 User.propTypes = {
-    name: propTypes.string, // STRING
+    // name: propTypes.string, // STRING
     lastname: propTypes.string, // STRING
     age: propTypes.number, // NUMBER
-    hobbies: propTypes.array, // ARRAY
+    // hobbies: propTypes.array, // ARRAY
     spanish: propTypes.bool, // NUMBER
     message: propTypes.func, // FUNCTION
-    car: propTypes.object // OBJECT
+    car: propTypes.object, // OBJECT
+
+    // oneOf
+    //name: propTypes.oneOf(['Francis', 'James']), // ACCEPT DIFFERENT VALUES
+
+    // OneOfTypes
+    name: propTypes.oneOfType([
+        propTypes.string,
+        propTypes.number,
+        propTypes.oneOf(["Francis", "James"])
+    ]),
+
+    // arrayof
+    hobbies: propTypes.arrayOf(propTypes.string),
+
+    // isRequired
+    // mother: propTypes.string.isRequired
+
+    // Custom Prototypes
+    mother: function(props, propName, componentName) {
+        if (props[propName] !== "Martha") {
+            return new Error(
+                `The name ${props[propName]} is incorrect, should be Martha`
+            );
+        }
+    }
 };
 
 export default User;
