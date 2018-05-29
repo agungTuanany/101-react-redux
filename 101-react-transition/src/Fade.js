@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import "./App.css";
+import { fadeAnimation } from "./animations";
 
-const fadeAnimation = {
-    classNames: "fade",
-    timeout: { enter: 500, exit: 500 },
-    appear: { enter: 500, exit: 500 }
-};
+// const fadeAnimation = {
+//     classNames: "fade",
+//     timeout: { enter: 500, exit: 500 },
+//     appear: { enter: 500, exit: 500 }
+// };
 
 class Fade extends Component {
     constructor(props) {
@@ -22,9 +23,7 @@ class Fade extends Component {
         return this.state.items.map(function(item, i) {
             return (
                 <CSSTransition key={i} {...fadeAnimation}>
-                    <div className="item" key={i}>
-                        {item}
-                    </div>
+                    <div className="item">{item}</div>
                 </CSSTransition>
             );
         });

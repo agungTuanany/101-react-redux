@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import "./App.css";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
+import "./App.css";
+import { slideAnimation } from "./animations";
 class Slide extends Component {
     constructor(props) {
         super(props);
@@ -13,9 +15,9 @@ class Slide extends Component {
     addElements() {
         return this.state.items.map(function(item, i) {
             return (
-                <div className="item" key={i}>
-                    {item}
-                </div>
+                <CSSTransition key={i} {...slideAnimation}>
+                    <div className="item">{item}</div>
+                </CSSTransition>
             );
         });
     }
@@ -42,8 +44,7 @@ class Slide extends Component {
     render() {
         return (
             <div>
-                {this.addElements()}
-
+                <TransitionGroup>{this.addElements()}</TransitionGroup>
                 <div className="btns">
                     <div
                         className="btn-add"

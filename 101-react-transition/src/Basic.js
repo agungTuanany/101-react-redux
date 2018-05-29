@@ -20,9 +20,7 @@ class Basic extends Component {
                     timeout={{ enter: 500, exit: 500 }}
                     appear={500}
                 >
-                    <div className="item" key={i}>
-                        {item}
-                    </div>
+                    <div className="item">{item}</div>
                 </CSSTransition>
             );
         });
