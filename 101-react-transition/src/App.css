@@ -101,12 +101,48 @@
 .basic-exit.basic-exit-active {
     transform: translateX(-100%);
     background: #3f51b5;
-    transition: all 800ms ease-in;
+    transition: all 500ms ease-in;
 }
 
 /*=======================================
                 FADE
 ========================================*/
+
+.fade-appear {
+    opacity: 0.01;
+}
+
+.fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+}
+
+/* STARTING animation */
+.fade-enter {
+    opacity: 0.1;
+    background: #3f51b5;
+    transform: scale(0.9) translateY(50%);
+}
+
+/* ENDING animation */
+.fade-enter.fade-enter-active {
+    background: #2196f3;
+    transform: scale(1) translateY(0%);
+    transition: all 500ms ease-in;
+}
+
+.fade-exit {
+    opacity: 1;
+    background: #2196f3;
+    transform: scale(1) translateY(0%);
+}
+
+.fade-exit.fade-exit-active {
+    opacity: 0.1;
+    transform: translateX(-100%);
+    background: #3f51b5;
+    transition: all 500ms ease-in;
+}
 
 /*=======================================
                 SLIDE

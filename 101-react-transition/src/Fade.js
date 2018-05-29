@@ -1,5 +1,13 @@
 import React, { Component } from "react";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 import "./App.css";
+
+const fadeAnimation = {
+    classNames: "fade",
+    timeout: { enter: 500, exit: 500 },
+    appear: { enter: 500, exit: 500 }
+};
 
 class Fade extends Component {
     constructor(props) {
@@ -13,9 +21,11 @@ class Fade extends Component {
     addElements() {
         return this.state.items.map(function(item, i) {
             return (
-                <div className="item" key={i}>
-                    {item}
-                </div>
+                <CSSTransition key={i} {...fadeAnimation}>
+                    <div className="item" key={i}>
+                        {item}
+                    </div>
+                </CSSTransition>
             );
         });
     }
@@ -42,8 +52,7 @@ class Fade extends Component {
     render() {
         return (
             <div>
-                {this.addElements()}
-
+                <TransitionGroup>{this.addElements()}</TransitionGroup>
                 <div className="btns">
                     <div
                         className="btn-add"
