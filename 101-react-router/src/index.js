@@ -7,6 +7,8 @@ import Post from "./component/posts";
 import Profile from "./component/profile";
 import PostsItems from "./component/posts_item";
 import NotFound from "./component/404";
+import Lifecycle from "./component/lifecycle";
+
 class App extends Component {
     render() {
         return <div> Home </div>;
@@ -27,13 +29,15 @@ ReactDOM.render(
                 <br />
                 <NavLink to="/post"> Post </NavLink> <br />
                 <NavLink to="/profile"> Profile </NavLink> <br />
+                <NavLink to="/lifecycle">LIFE</NavLink>
                 <hr />
             </header>
             <Switch>
+                <Route exact path="/" component={App} />
+                <Route exact path="/post" component={Post} />
+                <Route exact path="/lifecycle" component={Lifecycle} />
                 <Route path="/post/:id" component={PostsItems} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/post" component={Post} />
-                <Route exact path="/" component={App} />
                 <Route path="*" component={NotFound} />
             </Switch>
         </div>
