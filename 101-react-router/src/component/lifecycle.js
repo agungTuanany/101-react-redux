@@ -11,6 +11,11 @@ class Lifecycle extends Component {
             body: "some dummy text"
         };
     }
+    // this component will not been called, cause this compoennt will trigered after the component recieve new props is not call when component start
+    componentWillReceiveProps() {
+        console.log("BEFORE RECIEVIMG PROPS");
+    }
+
     // 3 BEFORE GETS CREATED
     componentWillMount() {
         console.log("before components gets created");
@@ -53,6 +58,13 @@ class Lifecycle extends Component {
     componentDidMount() {
         console.log("after component gets created");
         document.querySelector("h4").style.color = "red";
+    }
+    // we destroy a lifecyle component before we go to the different
+    //  component. It usefull for (1) clear some state or before going to different
+    //  views, (2) need to do in state or (3)global variabel, and going to next
+    //  component without conflig
+    componentWillUnmount() {
+        console.log("UNMOUNT");
     }
 }
 
