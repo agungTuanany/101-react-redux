@@ -3,9 +3,13 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
-        <header>
-            <div> FOOTER </div>
-        </header>
+        <footer>
+            <div className="flexbox-container">
+                <div className="logo">
+                    <span> </span>
+                </div>
+            </div>
+        </footer>
     );
 };
 
