@@ -1,15 +1,21 @@
 import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 
-// TYPE OF COMPONENT: Class-Component
+//COMPONENT
+import Header from "./header";
+import Footer from "./footer";
+import Home from "/home";
+
 class App extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {};
-    }
-
     render() {
-        return <div> THIS IS A COMPONENT</div>;
+        return;
+        <BrowserRouter>
+            <div>
+                <Header />
+                <Route exact path="/" component={Home} />
+                <Footer />
+            </div>
+        </BrowserRouter>;
     }
 }
 
