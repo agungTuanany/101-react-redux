@@ -29,6 +29,18 @@ class subscriptions extends Component {
             });
     };
 
+    clearMessages() {
+        setTimeout(
+            function() {
+                this.setState({
+                    error: false,
+                    success: false
+                });
+            }.bind(this),
+            3000
+        );
+    }
+
     handleSubmit = event => {
         event.preventDefault();
         let email = this.state.email;
@@ -37,8 +49,9 @@ class subscriptions extends Component {
         if (regex.test(email)) {
             this.saveSubscription(email);
         } else {
-            // will reset the email
+            this.setState({ error: true });
         }
+        this.clearMessages();
     };
 
     onChageInput = event => {
@@ -59,6 +72,20 @@ class subscriptions extends Component {
                             value={this.state.input}
                             onChange={this.onChageInput}
                         />
+                        <div
+                            className={
+                                this.state.error ? "error show" : "error"
+                            }
+                        >
+                            Check your email{" "}
+                        </div>
+                        <div
+                            className={
+                                this.state.success ? "success show" : "success"
+                            }
+                        >
+                            Thanks for subcribe{" "}
+                        </div>
                     </form>
                 </div>
                 <small>

@@ -64,6 +64,7 @@ footer {
 /*===================================
                 SLIDER
 ===================================*/
+
 .item-slider {
     position: relative;
     font-family: "Fjalla One", sans-serif;
@@ -99,4 +100,22 @@ footer {
 .item-slider .caption p {
     font-size: 70px;
     margin-top: 0px;
+}
+
+/*===================================
+            SUBSCRIBE
+===================================*/
+
+.subcribe_panel .error {
+    display: none;
+    color: #f44336;
+}
+.subcribe_panel .success {
+    display: none;
+    color: #4caf50;
+}
+
+.subcribe_panel .error.show,
+.subcribe_panel .success.show {
+    display: block;
 }
