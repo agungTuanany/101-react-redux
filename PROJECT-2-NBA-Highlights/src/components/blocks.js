@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Reveal from "react-reveal/Reveal";
+import Zoom from "react-reveal/Zoom";
 
 const generateBlocks = ({ blocks }) => {
     if (blocks) {
         return blocks.map(item => {
             return (
-                <div key={item.id}>
-                    <Reveal effect="fadeInUp" className={`item ${item.type}`}>
+                <Zoom key={item.id}>
+                    <div effect="fadeInUp" className={`item ${item.type}`}>
                         <div className="veil" />
                         <div
                             className="image"
@@ -20,15 +20,15 @@ const generateBlocks = ({ blocks }) => {
                         <div className="title">
                             <Link to={item.link}>{item.title}</Link>
                         </div>
-                    </Reveal>
-                </div>
+                    </div>
+                </Zoom>
             );
         });
     }
 };
 
 const Blocks = props => {
-    return <div className="home_blocks">{generateBlocks(props)}</div>;
+    return <div className="home_block">{generateBlocks(props)}</div>;
 };
 
 export default Blocks;
