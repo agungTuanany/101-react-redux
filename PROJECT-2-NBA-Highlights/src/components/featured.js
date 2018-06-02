@@ -20,6 +20,7 @@ const generateSlides = ({ slides }) => {
                             <img
                                 className="item-slider-img"
                                 src={`/images/covers/${item.cover}`}
+                                alt={item.cover}
                             />
                             <div className="caption">
                                 <h4>{item.topic}</h4>
