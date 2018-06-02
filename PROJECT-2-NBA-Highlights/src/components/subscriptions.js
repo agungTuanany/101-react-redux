@@ -9,6 +9,18 @@ class subscriptions extends Component {
         };
     }
 
+    clearMessages() {
+        setTimeout(
+            function() {
+                this.setState({
+                    error: false,
+                    success: false
+                });
+            }.bind(this),
+            3000
+        );
+    }
+
     saveSubscription = email => {
         const URL_EMAIL = "http://localhost:3004/subcriptions";
 
@@ -28,18 +40,6 @@ class subscriptions extends Component {
                 });
             });
     };
-
-    clearMessages() {
-        setTimeout(
-            function() {
-                this.setState({
-                    error: false,
-                    success: false
-                });
-            }.bind(this),
-            3000
-        );
-    }
 
     handleSubmit = event => {
         event.preventDefault();
