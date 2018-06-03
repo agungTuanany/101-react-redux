@@ -1,29 +1,29 @@
-import React, { Component } from "react";
+import React, {Component} from 'react';
 
 // COMPONENT
-import Featured from "./featured";
-import Subcriptions from "./subscriptions";
-import Blocks from "./blocks";
-import Poll from "./poll";
+import Featured from './featured';
+import Subcriptions from './subscriptions';
+import Blocks from './blocks';
+import Poll from './poll';
 
-const URL_HOME = "http://localhost:3004/home";
+const URL_HOME = 'http://localhost:3004/home';
 
 class Home extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            home: ""
+            home: '',
         };
     }
 
     componentDidMount() {
-        fetch(URL_HOME, { mehtod: "GET" })
-            .then(response => response.json())
-            .then(json => {
+        fetch(URL_HOME, {mehtod: 'GET'})
+            .then((response) => response.json())
+            .then((json) => {
                 // console.log(json);
                 this.setState({
-                    home: json
+                    home: json,
                 });
             });
     }
