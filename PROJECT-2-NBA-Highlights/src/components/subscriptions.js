@@ -77,14 +77,14 @@ class subscriptions extends Component {
                                 this.state.error ? "error show" : "error"
                             }
                         >
-                            Check your email{" "}
+                            Check your email
                         </div>
                         <div
                             className={
                                 this.state.success ? "success show" : "success"
                             }
                         >
-                            Thanks for subcribe{" "}
+                            Thanks for subcribe
                         </div>
                     </form>
                 </div>
