@@ -1,36 +1,17 @@
 /* eslint react/prop-types: 0 */
 
 import React, { Component } from "react";
-import { connect } from "react-redux";
 
-import * as actions from "./actions";
+import MoviesList from "./containers/movies_list";
 
 class App extends Component {
-    UNSAFE_componentWillMount() {
-        this.props.moviesList();
+    render() {
+        return (
+            <div>
+                <MoviesList />
+            </div>
+        );
     }
-
-	renderList = movies => {
-	    if (movies) {
-	        return movies.map(movie => {
-	            return <div key={movie.id}>{movie.name}</div>;
-	        });
-	    }
-	};
-
-	render() {
-	    return <div>{this.renderList(this.props.movies)} </div>;
-	}
 }
 
-function mapStateToProps(state) {
-    console.log(state);
-    return {
-        movies: state.movies
-    };
-}
-
-export default connect(
-    mapStateToProps,
-    actions
-)(App);
+export default App;
