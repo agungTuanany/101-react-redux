@@ -4,6 +4,12 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 const URL_TEAMS = "http://localhost:3004/teams";
 
+const fadeAnimations = {
+    classNames: "fade",
+    timeout: { enter: 500, exit: 500 },
+    appear: { enter: 500, exit: 500 }
+};
+
 class Teams extends Component {
     constructor(props) {
         super(props);
@@ -26,13 +32,18 @@ class Teams extends Component {
     renderList({ filtered }) {
         return filtered.map(item => {
             return (
-                <Link
-                    to={`/team/${item.name}`}
-                    key={item.id}
-                    className="team_item"
-                >
-                    <img alt={item.name} src={`/images/teams/${item.logo}`} />
-                </Link>
+                <CSSTransition key={item.id} {...fadeAnimations}>
+                    <Link
+                        to={`/team/${item.name}`}
+                        key={item.id}
+                        className="team_item"
+                    >
+                        <img
+                            alt={item.name}
+                            src={`/images/teams/${item.logo}`}
+                        />
+                    </Link>
+                </CSSTransition>
             );
         });
     }
@@ -49,7 +60,9 @@ class Teams extends Component {
                     />
                 </div>
                 <div className="teams_container">
-                    {this.renderList(this.state)}
+                    <TransitionGroup>
+                        {this.renderList(this.state)}
+                    </TransitionGroup>
                 </div>
             </div>
         );
