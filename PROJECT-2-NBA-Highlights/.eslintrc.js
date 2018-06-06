@@ -19,6 +19,7 @@ module.exports = {
 		"no-unused-vars": "off",
 		"class-methods-use-this": 0,
 		"import/no-named-as-default": 0,
+		"no-console": "off",
 		"react/jsx-filename-extension": [
 			"error",
 			{
