@@ -1,16 +1,36 @@
+/* eslint react/prop-types: 0 */
+
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
-// TYPE OF COMPONENT: Class-Component
+import * as actions from "./actions";
+
 class App extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {};
+    UNSAFE_componentWillMount() {
+        this.props.moviesList();
     }
 
-    render() {
-        return <div> HELLO, WORLD! </div>;
-    }
+	renderList = movies => {
+	    if (movies) {
+	        return movies.map(movie => {
+	            return <div key={movie.id}>{movie.name}</div>;
+	        });
+	    }
+	};
+
+	render() {
+	    return <div>{this.renderList(this.props.movies)} </div>;
+	}
 }
 
-export default App;
+function mapStateToProps(state) {
+    console.log(state);
+    return {
+        movies: state.movies
+    };
+}
+
+export default connect(
+    mapStateToProps,
+    actions
+)(App);
