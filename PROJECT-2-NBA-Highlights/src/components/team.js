@@ -1,3 +1,4 @@
+/* eslint react/prop-types: 0 */
 import React, { Component } from "react";
 
 const URL_TEAM = "http://localhost:3004/teams";
