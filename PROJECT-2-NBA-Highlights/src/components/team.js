@@ -49,7 +49,10 @@ class Team extends Component {
 	        return (
 	            <div key={item.id} className="team_data_wrapper">
 	                <div className="left">
-	                    <img alt={item.name} src={`/images/teams/$item.logo`} />
+	                    <img
+	                        alt={item.name}
+	                        src={`/images/teams/${item.logo}`}
+	                    />
 	                </div>
 	                <div className="left">
 	                    <h1>{item.name}</h1>
