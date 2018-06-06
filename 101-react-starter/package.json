@@ -13,5 +13,18 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "dev": "nodemon start"
-  }
+  },
+  "devDependencies": {
+		"ajv": "^5.5.0",
+		"babel-eslint": "^7.2.3",
+		"eslint": "^4.19.1",
+		"eslint-config-prettier": "^2.9.0",
+		"eslint-config-react-app": "^2.1.0",
+		"eslint-plugin-import": "^2.12.0",
+		"eslint-plugin-jsx-a11y": "^5.1.1",
+		"eslint-plugin-prettier": "^2.6.0",
+		"eslint-plugin-react": "7.8.2",
+		"prettier": "^1.13.4"
+	}
+
 }
