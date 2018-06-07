@@ -1,11 +1,11 @@
 // index.js ACTION-CREATORS
 
-const URL_ROOT = 'http:localhost:3004';
+const URL_ROOT = 'http://localhost:3004';
 
 export function getCars(keywords) {
     const request = fetch(`${URL_ROOT}/carsIndex?q=${keywords}`, {
         method: 'GET'
-    });
+    }).then(response => response.json());
 
     return {
         type: 'SEARCH_CARS',
