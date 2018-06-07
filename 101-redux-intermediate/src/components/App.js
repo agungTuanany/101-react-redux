@@ -1,8 +1,15 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+
+import '../app.css';
+import Search from '../containers/search';
 
 class App extends Component {
     render() {
-        return <div>HELLO, WORLD!</div>;
+        return (
+            <div>
+                <Search />
+            </div>
+        );
     }
 }
 
