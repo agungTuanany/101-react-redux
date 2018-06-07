@@ -1,14 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class ListOfCars extends Component {
     listOfCars = ({ cars }) => {
         if (cars) {
             return cars.map(car => {
                 return (
-                    <div key={car.id} className="car_item">
+                    <Link
+                        to={`/cars/${car.id}`}
+                        key={car.id}
+                        className="car_item">
+                        <div className="left">
+                            <img src={`/images/${car.image}`} />
+                        </div>
+                        <div className="right">
+                            <h4>{car.mnodel}</h4>
+                            <h6>{car.brand}</h6>
+                        </div>
+
                         {car.model}
-                    </div>
+                    </Link>
                 );
             });
         }
