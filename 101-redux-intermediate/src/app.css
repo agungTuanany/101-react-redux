@@ -59,3 +59,19 @@ a {
 .car_item .right h6 {
     margin: 0px;
 }
+
+/*==================================
+            CAR DETAIL
+====================================*/
+.car_detail img {
+    width: 100%;
+}
+
+.car_detail h2,
+.car_detail h4 {
+    margin: 0px;
+}
+
+.car_detail .content {
+    padding: 10px;
+}
