@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 class ListOfCars extends Component {
-    listOfCars = ({ cars }) => {
-        if (cars) {
-            return cars.map(car => {
+    listOfCars = ({ list }) => {
+        if (list) {
+            return list.map(car => {
                 return (
                     <Link
                         to={`/car/${car.id}`}
@@ -27,7 +27,7 @@ class ListOfCars extends Component {
     };
 
     render() {
-        return <div>{this.listOfCars(this.props)}</div>;
+        return <div>{this.listOfCars(this.props.cars)}</div>;
     }
 }
 
