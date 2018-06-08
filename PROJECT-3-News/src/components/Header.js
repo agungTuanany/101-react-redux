@@ -1,7 +1,11 @@
 import React from 'react';
 
 const Header = () => {
-    return <div>HEADER-DAILY-NEWS</div>;
+    return (
+        <header>
+            <div>DAILY-NEWS</div>
+        </header>
+    );
 };
 
 export default Header;
