@@ -16,7 +16,7 @@ class Car extends Component {
 function mapStateToProps(state) {
     console.log(state);
     return {
-        carDetail: state.carDetail
+        car: state.carDetail
     };
 }
 
