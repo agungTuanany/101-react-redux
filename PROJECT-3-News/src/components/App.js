@@ -1,15 +1,21 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+// CONTAINERS
+import Home from '../containers/Home';
 
 // TYPE OF COMPONENT: Class-Component
 class App extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {};
-    }
-
     render() {
-        return <div> THIS IS A COMPONENT</div>;
+        return (
+            <BrowserRouter>
+                <div>
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                    </Switch>
+                </div>
+            </BrowserRouter>
+        );
     }
 }
 
