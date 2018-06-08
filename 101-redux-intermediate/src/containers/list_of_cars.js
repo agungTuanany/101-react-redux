@@ -8,14 +8,14 @@ class ListOfCars extends Component {
             return cars.map(car => {
                 return (
                     <Link
-                        to={`/cars/${car.id}`}
+                        to={`/car/${car.id}`}
                         key={car.id}
                         className="car_item">
                         <div className="left">
-                            <img src={`/images/${car.image}`} />
+                            <img alt={car.image} src={`/images/${car.image}`} />
                         </div>
                         <div className="right">
-                            <h4>{car.mnodel}</h4>
+                            <h4>{car.model}</h4>
                             <h6>{car.brand}</h6>
                         </div>
 

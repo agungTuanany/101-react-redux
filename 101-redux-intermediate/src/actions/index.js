@@ -12,3 +12,14 @@ export function getCars(keywords) {
         payload: request
     };
 }
+
+export function carDetail(id) {
+    const request = fetch(`${URL_ROOT}/carsIndex?id=${id}`, {
+        method: 'GET'
+    }).then(response => response.json());
+
+    return {
+        type: 'CAR_DETAIL',
+        payload: request
+    };
+}
