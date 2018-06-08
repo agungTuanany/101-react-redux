@@ -1,30 +1,35 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { latestNews } from '../actions';
-import { bindActionsCreators } from 'redux';
+import { bindActionCreators } from 'redux';
 
 // COMPONENTS
 import LatestNews from '../components/home/Latest';
 
 class Home extends Component {
+    componentDidMount() {
+        this.props.latestNews();
+    }
+
     render() {
         return (
             <div>
-                <LatestNews />
+                <LatestNews latest={this.props.articles.latest} />
             </div>
         );
     }
 }
 function mapStateToProps(state) {
+    console.log(state);
     return {
         articles: state.articles
     };
 }
 
 function mapDispatchToProps(dispatch) {
-    return bindActionsCreators({ latestNewst }, dispatch);
+    return bindActionCreators({ latestNews }, dispatch);
 }
 export default connect(
     mapStateToProps,
-    null
+    mapDispatchToProps
 )(Home);
