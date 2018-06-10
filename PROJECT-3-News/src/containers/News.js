@@ -37,7 +37,7 @@ class News extends Component {
                                 <i
                                     className="fa fa-thumbs-down"
                                     aria-hidden="true"
-                                />{' '}
+                                />
                                 {item.likes[1]}
                             </span>
                         </div>

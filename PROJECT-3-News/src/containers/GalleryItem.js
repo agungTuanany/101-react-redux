@@ -32,6 +32,7 @@ class Gallery extends Component {
                                 <div key={index} className="slide-item">
                                     <div>
                                         <img
+                                            alt={item.img}
                                             className="image"
                                             src={`/images/galleries/${
                                                 item.img
