@@ -20,7 +20,7 @@ class Home extends Component {
             <div>
                 <LatestNews latest={this.props.articles.latest} />
                 <OtherNews otherNews={this.props.articles.other} />
-                <Gallery LatestGallery={this.props.gallery.latestGallery} />
+                <Gallery latestGallery={this.props.gallery.latestGallery} />
             </div>
         );
     }
