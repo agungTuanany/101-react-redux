@@ -31,3 +31,23 @@ export function latestGallery() {
         payload: request
     };
 }
+
+// NEWS ACTION-CREATORS
+
+export function selectedNews(id) {
+    const request = fetch(`${URL}/articles?id=${id}`, {
+        method: 'GET'
+    }).then(response => response.json());
+
+    return {
+        type: 'GET_SELECTED_NEWS',
+        payload: request
+    };
+}
+
+export function clearSelectedNews() {
+    return {
+        type: 'CLEAR_SELECTED_NEWS',
+        payload: []
+    };
+}

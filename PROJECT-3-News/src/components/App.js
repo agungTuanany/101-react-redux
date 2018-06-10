@@ -7,8 +7,8 @@ import Footer from './Footer';
 
 // CONTAINERS
 import Home from '../containers/Home';
+import News from '../containers/News';
 
-// TYPE OF COMPONENT: Class-Component
 class App extends Component {
     render() {
         return (
@@ -16,6 +16,7 @@ class App extends Component {
                 <div>
                     <Header />
                     <Switch>
+                        <Route path="/news/:id" component={News} />
                         <Route exact path="/" component={Home} />
                     </Switch>
                     <Footer />
