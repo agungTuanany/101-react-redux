@@ -17,7 +17,7 @@ const renderOtherNews = ({ otherNews }) => {
                         <div className="category-tag">{item.category}</div>
                         <div className="tags">
                             <span>
-                                <i className="fa fa-eye" aria-hidden="true" />{' '}
+                                <i className="fa fa-eye" aria-hidden="true" />
                                 {item.views}
                             </span>
                             <span>
