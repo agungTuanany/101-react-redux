@@ -6,11 +6,21 @@ class Form extends Component {
     renderInputFiled(field) {
         return (
             <div className="form-input">
-                <label>Title</label>
+                <label>{field.myLabel}</label>
                 <input type="text" {...field.input} />
             </div>
         );
     }
+
+    renderTextareaField(field) {
+        return (
+            <div className="from-input">
+                <label>{field.myLabel}</label>
+                <textarea {...field.input} />
+            </div>
+        );
+    }
+
     render() {
         return (
             <div className="Form">
@@ -26,6 +36,18 @@ class Form extends Component {
                         myLabel="Title"
                         name="title"
                         component={this.renderInputFiled}
+                    />
+
+                    <Field
+                        myLabel="From"
+                        name="form"
+                        component={this.renderInputFiled}
+                    />
+
+                    <Field
+                        myLabel="Message"
+                        name="message"
+                        component={this.renderTextareaField}
                     />
                 </form>
             </div>
