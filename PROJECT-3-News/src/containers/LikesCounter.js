@@ -25,7 +25,7 @@ class LikesCounter extends Component {
                 <h3>How do you fell about this</h3>
                 <div className="addlikes-container">
                     <div
-                        className="btn-like"
+                        className="btn like"
                         onClick={() => this.addLikes('ADD')}>
                         <div className="hits">{this.props.likes}</div>
                         <div className="icon">
@@ -33,7 +33,7 @@ class LikesCounter extends Component {
                         </div>
                     </div>
                     <div
-                        className="btn-dislike"
+                        className="btn dislike"
                         onClick={() => this.addLikes('REMOVE')}>
                         <div className="hits">{this.props.dislikes}</div>
                         <div className="icon">
