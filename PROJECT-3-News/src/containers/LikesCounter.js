@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { handleLikes } from '../actions';
+import { bindActionCreators } from 'redux';
 
 class LikesCounter extends Component {
     addLikes = action => {
@@ -8,7 +11,12 @@ class LikesCounter extends Component {
                 ? [this.props.likes + 1, this.props.dislikes]
                 : [this.props.likes, this.props.dislikes + 1];
 
-        console.log(newLikes);
+        this.props.handleLikes(
+            newLikes,
+            props.articleId,
+            props.section,
+            props.type
+        );
     };
 
     render() {
@@ -41,4 +49,11 @@ class LikesCounter extends Component {
     }
 }
 
-export default LikesCounter;
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators({ handleLikes }, dispatch);
+}
+
+export default connect(
+    null,
+    mapDispatchToProps
+)(LikesCounter);

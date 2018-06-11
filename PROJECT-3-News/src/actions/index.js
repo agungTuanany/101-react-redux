@@ -71,3 +71,20 @@ export function clearSelectedGallery() {
         payload: []
     };
 }
+
+// LIKES-COUNTER CREATORS
+
+export function handleLikes(array, id, section, type) {
+    const request = fetch(`${URL}/${section}/${id}`, {
+        method: 'PATCH',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ likes: array })
+    }).then(response => response.json());
+    return {
+        type,
+        payload: request
+    };
+}
