@@ -13,7 +13,7 @@ export function getMessages() {
     };
 }
 
-export function addMessage(values) {
+export function addMessage(values, cb) {
     const request = fetch(`${URL}/messages`, {
         method: 'POST',
         headers: {
@@ -21,10 +21,14 @@ export function addMessage(values) {
             'Content-type': 'application/json'
         },
         body: JSON.stringify(values)
-    }).then(response => response.json());
+    })
+        .then
+        //     () => cb()
+        ();
 
     return {
         type: 'ADD_MESSAGE',
-        payload: 'everything went fine'
+        payload: 'Everything went fine'
+        //payload: request
     };
 }

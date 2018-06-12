@@ -40,7 +40,9 @@ class Form extends Component {
     }
 
     onSubmit(values) {
-        this.props.addMessage(values);
+        this.props.addMessage(values, () => {
+            this.props.history.push('/');
+        });
     }
 
     render() {
@@ -72,6 +74,7 @@ class Form extends Component {
                         component={this.renderTextareaField}
                     />
                     <button type="submit">Submit</button>
+                    {/*this.props.messages.state.success()  */}
                 </form>
             </div>
         );
@@ -95,13 +98,19 @@ function validate(values) {
 
     return errors;
 }
+function mapStateToProps(state) {
+    console.log(state);
+    return {
+        success: state.data
+    };
+}
 
 export default reduxForm({
     validate,
     form: 'PostMessage'
 })(
     connect(
-        null,
+        mapStateToProps,
         { addMessage }
     )(Form)
 );
