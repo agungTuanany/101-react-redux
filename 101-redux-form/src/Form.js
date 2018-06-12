@@ -3,22 +3,36 @@ import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 
 class Form extends Component {
+    // PRISTINE // DIRTY // TOUCHED // ERROR
+
     renderInputFiled(field) {
+        const className = `form-input ${
+            field.meta.touched && field.meta.error ? 'has-error' : ''
+        }`;
+
         return (
-            <div className="form-input">
+            <div className={className}>
                 <label>{field.myLabel}</label>
                 <input type="text" {...field.input} />
-                <div className="error">{field.meta.error}</div>
+                <div className="error">
+                    {field.meta.touched ? field.meta.error : ''}
+                </div>
             </div>
         );
     }
 
     renderTextareaField(field) {
+        const className = `form-input ${
+            field.meta.touched && field.meta.error ? 'has-error' : ''
+        }`;
         return (
-            <div className="from-input">
+            <div className={className}>
                 <label>{field.myLabel}</label>
                 <textarea {...field.input} />
-                <div className="error">{field.meta.error}</div>
+
+                <div className="error">
+                    {field.meta.touched ? field.meta.error : ''}
+                </div>
             </div>
         );
     }
@@ -30,10 +44,7 @@ class Form extends Component {
                     <h3>Add a Message</h3>
                     <Link to="/">Back</Link>
                 </div>
-                <form
-                    onSubmit={this.props.handleSubmit(event =>
-                        this.onSubmit(event)
-                    )}>
+                <form>
                     <Field
                         myLabel="Title"
                         name="title"
